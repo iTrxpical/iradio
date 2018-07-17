@@ -18,7 +18,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
     if(oldUserChannel === undefined && newUserChannel !== undefined) {
       
       if (newUserChannel === vchannel) {
-      tchannel.sendMessage(newMember.displayName + ' has joined a voice channel and has recieved the `Now Listening` role!');
+      tchannel.send(newMember.displayName + ' has joined a voice channel and has recieved the `Now Listening` role!');
       await(newMember.addRole(role))
 	      process.on("unhandledRejection", error => {
     console.error("Unhandled promise rejection", error);
@@ -27,7 +27,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
 	      console.log(`ADDED`)
       }
     } else if(newUserChannel === undefined){
-      tchannel.sendMessage(oldMember.displayName + ' has left a voice channel and has now been removed from the `Now Listening` list!');
+      tchannel.send(oldMember.displayName + ' has left a voice channel and has now been removed from the `Now Listening` list!');
       await(newMember.removeRole(role))
     }
   });
