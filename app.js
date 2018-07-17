@@ -20,6 +20,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
       if (newUserChannel === vchannel) {
       tchannel.sendMessage(newMember.displayName + ' has joined a voice channel and has recieved the `Now Listening` role!');
       await(newmember.addRole(role))
+	      console.log(`ADDED`)
       }
     } else if(newUserChannel === undefined){
       tchannel.sendMessage(oldMember.displayName + ' has left a voice channel and has now been removed from the `Now Listening` list!');
