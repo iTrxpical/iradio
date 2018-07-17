@@ -55,7 +55,7 @@ if (command == 'play') {
 	console.log(`play`)
 		const voiceChannel = message.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
-		const permissions = voiceChannel.permissionsFor(msg.client.user);
+		const permissions = voiceChannel.permissionsFor(msg.client);
 		if (!permissions.has('CONNECT')) {
 			return msg.channel.send('I cannot connect to your voice channel, make sure I have the proper permissions!');
 		}
