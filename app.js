@@ -50,7 +50,7 @@ client.on('message', async function (message) {
     
     if (!message.content.startsWith(prefix)) return;
 
-if (command === 'play') {
+if (command == 'play') {
 	
 	console.log(`play`)
 		const voiceChannel = msg.member.voiceChannel;
