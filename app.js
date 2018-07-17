@@ -47,7 +47,6 @@ client.on('message', async function (message) {
 
   if (!message.content.startsWith(prefix)) return;
 
-  var args = message.content.substring(prefix.length).split(" ");
 
   switch (args[0].toLowerCase()) {
 case "play":
