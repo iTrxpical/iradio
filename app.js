@@ -8,7 +8,7 @@ client.on('ready', () => {
     client.user.setStatus("online");
 });
 
-cclient.on('voiceStateUpdate', async (oldMember, newMember) => {
+client.on('voiceStateUpdate', async (oldMember, newMember) => {
     let newUserChannel = newMember.voiceChannel;
     let oldUserChannel = oldMember.voiceChannel;
     var tchannel = client.channels.get('468468203069243393');
@@ -20,7 +20,6 @@ cclient.on('voiceStateUpdate', async (oldMember, newMember) => {
       if (newUserChannel === vchannel) {
       tchannel.send(newMember.displayName + ' has joined a voice channel and has recieved the `Now Listening` role!');
       await(newMember.addRole(role))
-      }}});
 	      
 	      console.log(`ADDED`)
       }
