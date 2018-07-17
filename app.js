@@ -60,6 +60,7 @@ if (command == 'play') {
 		const permissions = voiceChannel.permissionsFor(msg.client);
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
+			console.log(`url found`)
 			const playlist = await youtube.getPlaylist(url);
 			const videos = await playlist.getVideos();
 			for (const video of Object.values(videos)) {
