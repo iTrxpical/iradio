@@ -28,7 +28,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
       }
     } else if(newUserChannel === undefined){
       tchannel.sendMessage(oldMember.displayName + ' has left a voice channel and has now been removed from the `Now Listening` list!');
-      await(newmember.removeRole(role))
+      await(newMember.removeRole(role))
     }
   });
 
