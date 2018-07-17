@@ -100,20 +100,20 @@ Please provide a value to select one of the search results ranging from 1-10.
 			}
 			return handleVideo(video, msg, voiceChannel);
 		}
-	} 
+	} break;
 	case: "skip":
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing that I could skip for you.');
 		serverQueue.connection.dispatcher.end('Skip command has been used!');
 		return undefined;
-	} 
+	} break;
 	  case: "stop":
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing that I could stop for you.');
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end('Stop command has been used!');
 		return undefined;
-}
+} break;
 case: "volume":
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
@@ -121,11 +121,11 @@ case: "volume":
 		serverQueue.volume = args[1];
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 5);
 		return msg.channel.send(`I set the volume to: **${args[1]}**`);
-	} 
+	} break;
 	case: "np":
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		return msg.channel.send(`🎶 Now playing: **${serverQueue.songs[0].title}**`);
-	} 
+	} break;
 	case: "queue":
 		if (!serverQueue) return msg.channel.send('There is nothing playing.');
 		return msg.channel.send(`
@@ -133,7 +133,7 @@ __**Song queue:**__
 ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 **Now playing:** ${serverQueue.songs[0].title}
 		`);
-	}
+	} break;
 	case: "pause":
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
@@ -141,7 +141,7 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 			return msg.channel.send('⏸ Paused the music for you!');
 		}
 		return msg.channel.send('There is nothing playing.');
-	} 
+	} break;
 	case: "resume":
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
@@ -149,10 +149,10 @@ ${serverQueue.songs.map(song => `**-** ${song.title}`).join('\n')}
 			return msg.channel.send('▶ Resumed the music for you!');
 		}
 		return msg.channel.send('There is nothing playing.');
-	}
+	} break;
 
 	return undefined;
-});
+}); 
 
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
 	const serverQueue = queue.get(msg.guild.id);
