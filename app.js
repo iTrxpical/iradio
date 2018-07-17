@@ -52,7 +52,7 @@ client.on('message', async function (message) {
 
 if (command == 'play') {
 	
-	let url = args[0]
+	let url = args[1]
 	
 	console.log(`play`)
 		const voiceChannel = message.member.voiceChannel;
