@@ -39,9 +39,10 @@ client.on('message', async message => {
         return;
     }
     let msg = message.content.toLowerCase();
-    let cmd = args.shift().toLowerCase();
-let args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+	let args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
 let command = args.shift().toLowerCase();
+    let cmd = args.shift().toLowerCase();
+
 
     
     if (!message.content.startsWith(prefix)) return;
