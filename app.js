@@ -52,6 +52,8 @@ client.on('message', async function (message) {
 
 if (command == 'play') {
 	
+	let url = args[0]
+	
 	console.log(`play`)
 		const voiceChannel = message.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
