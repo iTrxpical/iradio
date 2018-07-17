@@ -39,10 +39,9 @@ client.on('message', async message => {
         return;
     }
     let msg = message.content.toLowerCase();
-    let args = message.content.slice(prefix.length).trim().split(" ");
     let cmd = args.shift().toLowerCase();
-
-    let command = message.content.substring(prefix.length).split(" ");
+  const args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
 
     
     if (!message.content.startsWith(prefix)) return;
@@ -55,8 +54,6 @@ if (command == 'play') {
 		const voiceChannel = message.member.voiceChannel;
 		if (!voiceChannel) return message.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
 		const permissions = voiceChannel.permissionsFor(msg.client);
-	      process.on("unhandledRejection", error => {
-    console.error("Unhandled promise rejection", error);
 	console.log(args[1])
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
 			console.log(args[0])
