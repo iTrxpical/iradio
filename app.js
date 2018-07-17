@@ -51,6 +51,8 @@ client.on('message', async function (message) {
     if (!message.content.startsWith(prefix)) return;
 
 if (command === 'play') {
+	
+	console.log(`play`)
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
