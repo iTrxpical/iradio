@@ -29,7 +29,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
     }
   });
 
-client.on('message', async function (message) {
+client.on('message', async message => {
 
     let sender = message.author;
 
