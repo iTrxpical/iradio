@@ -19,7 +19,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
       
       if (newUserChannel === vchannel) {
       tchannel.sendMessage(newMember.displayName + ' has joined a voice channel and has recieved the `Now Listening` role!');
-      await(newmember.addRole(role))
+      await(newMember.addRole(role))
 	      process.on("unhandledRejection", error => {
     console.error("Unhandled promise rejection", error);
 });
