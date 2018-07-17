@@ -99,8 +99,8 @@ Please provide a value to select one of the search results ranging from 1-10.
 				}
 			}
 			return handleVideo(video, msg, voiceChannel);
-		}
-	} break;
+		} break;
+	} 
 	case: "skip":
 		if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel!');
 		if (!serverQueue) return msg.channel.send('There is nothing playing that I could skip for you.');
