@@ -27,7 +27,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
     }
   });
 
-client.on('message', message => {
+client.on('message', async function (message) {
 
     let sender = message.author;
 
