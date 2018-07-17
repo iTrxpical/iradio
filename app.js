@@ -39,7 +39,7 @@ client.on('message', async message => {
         return;
     }
     let msg = message.content.toLowerCase();
-	let args = message.content.slice(client.config.prefix.length).trim().split(/ +/g);
+	let args = message.content.slice(prefix.length).trim().split(/ +/g);
 let command = args.shift().toLowerCase();
     let cmd = args.shift().toLowerCase();
 
