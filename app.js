@@ -20,8 +20,6 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
       if (newUserChannel === vchannel) {
       tchannel.send(newMember.displayName + ' has joined a voice channel and has recieved the `Now Listening` role!');
       await(newMember.addRole(role))
-	      process.on("unhandledRejection", error => {
-    console.error("Unhandled promise rejection", error);
 });
 	      
 	      console.log(`ADDED`)
@@ -58,7 +56,9 @@ if (command == 'play') {
 		const voiceChannel = message.member.voiceChannel;
 		if (!voiceChannel) return message.channel.send('I\'m sorry but you need to be in a voice channel to play music!');
 		const permissions = voiceChannel.permissionsFor(msg.client);
-console.log(args[0])
+	      process.on("unhandledRejection", error => {
+    console.error("Unhandled promise rejection", error);
+	console.log(args[1])
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
 			console.log(args[0])
 			const playlist = await youtube.getPlaylist(url);
