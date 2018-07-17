@@ -14,7 +14,7 @@ client.on('voiceStateUpdate', async (oldMember, newMember) => {
     var tchannel = client.channels.get('468468203069243393');
     var vchannel = client.channels.get('468433546797907983');
     var guild = client.guilds.get('468433546797907979');
-    var role = guild.roles.get('468470235045953537');
+    var role = guild.roles.find("name", "Now Listening");
     if(oldUserChannel === undefined && newUserChannel !== undefined) {
       
       if (newUserChannel === vchannel) {
